@@ -1,0 +1,5 @@
+proxy_ip="10.23.0.1"
+export ALL_PROXY="http://${proxy_ip}:8080"
+export HTTP_PROXY="http://${proxy_ip}:8080"
+export HTTPS_PROXY="http://${proxy_ip}:8080"
+

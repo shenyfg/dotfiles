@@ -1,0 +1,46 @@
+[font]
+size = 15
+normal = { family = "Monaco Nerd Font", style = "Regular" }
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Command|Shift", action = "Paste" },
+
+    { key = "0", mods = "Command", chars = "\u001b[48;3u" },
+    { key = "1", mods = "Command", chars = "\u001b[49;3u" },
+    { key = "2", mods = "Command", chars = "\u001b[50;3u" },
+    { key = "3", mods = "Command", chars = "\u001b[51;3u" },
+    { key = "4", mods = "Command", chars = "\u001b[52;3u" },
+    { key = "5", mods = "Command", chars = "\u001b[53;3u" },
+    { key = "6", mods = "Command", chars = "\u001b[54;3u" },
+    { key = "7", mods = "Command", chars = "\u001b[55;3u" },
+    { key = "8", mods = "Command", chars = "\u001b[56;3u" },
+    { key = "9", mods = "Command", chars = "\u001b[57;3u" },
+    { key = "s", mods = "Command", chars = "\u001b[115;3u" },
+
+    { key = "-", mods = "Command", chars = "\u001b[45;5u" },
+    { key = "/", mods = "Command", chars = "\u001b[47;5u" },
+    { key = ":", mods = "Command", chars = "\u001b[58;5u" },
+    { key = ";", mods = "Command", chars = "\u001b[59;5u" },
+    { key = "<", mods = "Command", chars = "\u001b[60;5u" },
+    { key = "=", mods = "Command", chars = "\u001b[61;5u" },
+    { key = ">", mods = "Command", chars = "\u001b[62;5u" },
+    { key = "?", mods = "Command", chars = "\u001b[63;5u" },
+    { key = "@", mods = "Command", chars = "\u001b[64;5u" },
+    { key = ",", mods = "Command", chars = "\u001b[44;5u" },
+    { key = "[", mods = "Command", chars = "\u001b[91;5u" },
+    { key = "\\", mods = "Command", chars = "\u001b[92;5u" },
+    { key = "]", mods = "Command", chars = "\u001b[93;5u" },
+    { key = "^", mods = "Command", chars = "\u001b[94;5u" },
+    { key = "_", mods = "Command", chars = "\u001b[95;5u" },
+    { key = "`", mods = "Command", chars = "\u001b[96;5u" },
+    { key = "{", mods = "Command", chars = "\u001b[123;5u" },
+    { key = "}", mods = "Command", chars = "\u001b[125;5u" },
+    { key = "~", mods = "Command", chars = "\u001b[126;5u" },
+]
+
+[selection]
+save_to_clipboard = true
+
+[env]
+TERM = "xterm-256color"

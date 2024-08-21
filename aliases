@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+alias a="aria2c -x 16 --check-certificate=false"
+alias c='clear'
+alias t='tldr'
+alias s='open'
+alias vim='nvim'
+
+# Easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias dl="cd ~/downloads"
+alias dc="cd ~/code"
+alias dt="cd ~/tmp"
+alias dw="cd ${WORK_DIR}"
+
+# Git operations
+alias dm="git branch --merged | grep -v '\*' | xargs -i  sh -c 'git branch -D {} && git push -d syf {}'"
+alias gl="git log --pretty=oneline -n 20 --graph --abbrev-commit"
+alias gs="git status"
+alias gb="git branch -a"
+alias gd="git diff origin/main"
+alias gp="git pull"
+alias gr="git fetch origin && git rebase -i origin/main"
+
+alias l="ls -lF --color=auto"
+alias ll="ls -lF --color=auto"
+alias la="ls -lAF --color=auto"
+alias lsd="ls -lF --color=auto | grep --color=never '^d'"
+alias ls="command ls --color=auto"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# URL-encode strings
+alias urlencode='python3 -c "import sys; from urllib.parse import quote; print(quote(sys.argv[1]));"'
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'

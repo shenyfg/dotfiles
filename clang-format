@@ -1,0 +1,26 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 120
+AccessModifierOffset: -4
+AlignEscapedNewlines: DontAlign
+AlignOperands: false
+AlignTrailingComments: false
+AllowAllConstructorInitializersOnNextLine: true
+AllowShortFunctionsOnASingleLine: false
+AlwaysBreakTemplateDeclarations: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  SplitEmptyFunction: true
+BreakConstructorInitializers: BeforeColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+FixNamespaceComments: false
+IndentCaseLabels: true
+MaxEmptyLinesToKeep: 1
+IncludeBlocks: Regroup
+IncludeIsMainRegex: '(_test)?$'
+IncludeCategories:
+  - Regex:            '^<'
+    Priority:         1
+  - Regex:            '.*'
+    Priority:         2
