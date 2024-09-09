@@ -42,10 +42,10 @@
 	template = ~/.gitmsg
 
 [color "diff"]
-	meta = black bold
+	meta = black
 	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	old = black red # deletions
+	new = black green # additions
 
 [diff]
 	# Detect copies as well as renames.

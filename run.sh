@@ -2,27 +2,28 @@ CONFIG_FILES=("clang-format" "tmux.conf" "aliases" "bash_profile" "bash_prompt" 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 function create_soft_link() {
-  destfile=$1
-  dotfile=$2
+  realfile=$1
+  symlink=$2
 
-  # if symbolic file exists, delete it first
-  if [ -L "$dotfile" ]; then
-    rm -f "$dotfile"
+  # if symbolic file exists, skip
+  if [ -L "$symlink" ]; then
+    return 0
   fi
 
   # if a real file exists, backup it first
-  if [ -f "$dotfile" ]; then
-    mv "$dotfile" "$dotfile"_bak
+  if [ -f "$symlink" ]; then
+    mv "$symlink" "$symlink"_bak
   fi
 
-  ln -s "${destfile}" "${dotfile}"
+  ln -s "${symlink}" "${realfile}"
+  echo "Symlink: $symlink created"
 }
 
 function main() {
   for f in ${CONFIG_FILES[*]}; do
-    dst_file="${SCRIPT_DIR}/${f}"
-    dot_file="${HOME}/.${f}"
-    create_soft_link "${dst_file}" "${dot_file}"
+    files="${SCRIPT_DIR}/${f}"
+    syms="${HOME}/.${f}"
+    create_soft_link "${files}" "${syms}"
   done
 
   if [[ $(uname -a) == *"microsoft"* ]]; then
@@ -41,6 +42,9 @@ function main() {
     echo "Start to copy terminal configs to ${terminal_path}"
     cp -f alacritty.toml "${terminal_path}"
   fi
+
+  # Ipython file configs
+  create_soft_link "${SCRIPT_DIR}/ipython_config.py" "${HOME}/.ipython/profile_default/ipython_config.py"
 
   source ~/.bash_profile
 }

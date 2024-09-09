@@ -5,6 +5,8 @@ alias c='clear'
 alias t='tldr'
 alias s='open'
 alias vim='nvim'
+alias pdb='python3 -m pdb'
+alias i='ipython'
 
 # Easier navigation
 alias ..="cd .."
